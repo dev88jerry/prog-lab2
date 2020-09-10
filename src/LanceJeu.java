@@ -5,8 +5,8 @@
  */
 package jeudedes;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Formatter;
 
 /**
  *
@@ -14,13 +14,19 @@ import java.time.format.DateTimeFormatter;
  */
 public class LanceJeu {
 
+    /**
+     * Main
+     * @param args
+     */
     public static void main(String[] args) {
         // TODO code application logic here
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-        LocalDateTime now = LocalDateTime.now();
 
-        System.out.print("Bienvenue a ce jeu de de, aujourd'hui nous sommes le ");
-        System.out.println(dtf.format(now));
+        Formatter fmt = new Formatter();
+        Calendar cal = Calendar.getInstance();
+        fmt.format("%tB", cal);
+
+        System.out.print("Bienvenue a ce jeu de dé, aujourd'hui nous sommes le ");
+        System.out.println(cal.get(Calendar.DATE) + " " + fmt + " " +cal.get(Calendar.YEAR));
 
         JeuDeDes jdd = new JeuDeDes();
     }
