@@ -25,7 +25,7 @@ public class Joueur {
      * Display method
      */
     public void afficher() {
-        System.out.println(nom + " a maintenant " + score);
+        System.out.println(nom + " a maintenant " + score + " points");
     }
 
     /**
