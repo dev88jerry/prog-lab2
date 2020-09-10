@@ -5,7 +5,9 @@
  */
 package jeudedes;
 
-import java.util.Random;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 /**
  *
@@ -18,85 +20,25 @@ public class JeuDeDes {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
-    
-    class Joueur{
-        public Joueur(){
-            
-        }
-        /**
-         * 
-         * @param newScore
-         * @return 
-         */
-        public int ajoute(int newScore){
-            return newScore + getScore();
-        }
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        LocalDateTime now = LocalDateTime.now();
         
-        private String nom;
-        private int score;
-
-        /**
-         * @return String nom
-         */
-        public String getNom() {
-            return nom;
-        }
-
-        /**
-         * @param set string Nom
-         */
-        public void setNom(String nom) {
-            this.nom = nom;
-        }
-
-        /**
-         * @return score
-         */
-        public int getScore() {
-            return score;
-        }
-
-        /**
-         * @param set score
-         */
-        public void setScore(int score) {
-            this.score = score;
-        }
-    }
-    
-    class De{
-        public De(){
-            setNbFaces(6);
-        }
-        /**
-         * 
-         * @return 
-         */
-        public int getDe(){
-            int res;
-            Random r = new Random();
-            res = r.ints(1,(6+1)).findFirst().getAsInt();
-                        
-            return res;
-        }
-        private int faces;
-
-        /**
-         * @return the faces
-         */
-        public int getNbFaces() {
-            return faces;
-        }
-
-        /**
-         * @param faces the faces to set
-         */
-        public final void setNbFaces(int faces) {
-            this.faces = faces;
-        }
+        String str, str2;
+        
+        System.out.print("Bienvenue a ce jeu de de, aujourd'hui nous sommes le ");
+        System.out.println(dtf.format(now));
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Entrez le nom du Joueur 1: ");
+        str = sc.next();
+        Joueur j1 = new Joueur(str);
+        
+        System.out.print("Entrez le nom du Joueur 2: ");
+        str2 = sc.next();
+        Joueur j2 = new Joueur(str2);
+        
+        j1.afficher();
+        j2.afficher();
         
     }
 }
-
-
