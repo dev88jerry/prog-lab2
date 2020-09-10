@@ -11,23 +11,29 @@ package jeudedes;
  */
 public class Joueur {
 
+    /**
+     * Consturctor with 1 param
+     *
+     * @param j1
+     */
     Joueur(String j1) {
         nom = j1;
         score = 0;
     }
 
+    /**
+     * Display method
+     */
     public void afficher() {
-        System.out.println(nom);
-        System.out.println(score);
+        System.out.println(nom + " a maintenant " + score);
     }
 
     /**
      *
      * @param newScore
-     * @return
      */
-    public int ajoute(int newScore) {
-        return newScore + getScore();
+    public void ajoute(int newScore) {
+        score += newScore;
     }
 
     private String nom;
@@ -61,4 +67,3 @@ public class Joueur {
         this.score = score;
     }
 }
-

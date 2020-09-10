@@ -12,33 +12,42 @@ import java.util.Random;
  * @author Jerry
  */
 public class De {
-
+    /**
+     * default contructor
+     */
     De() {
         faces = 6;
     }
-
+    /**
+     * constructor with 1 param
+     * @param nbF 
+     */
     De(int nbF) {
         faces = nbF;
     }
-    
-    public void affiche(){
-        
-    }
-    
-    public void lance(){
-        
+    /**
+     * display method
+     */
+    public void affiche() {
+        System.out.println("La valeur du de est: " + valeur);
     }
     
     /**
-     *
-     * @return dice result
+     * throw dice method
      */
-    public int getDe() {
+    public void lancer() {
         int res;
         Random r = new Random();
         res = r.ints(1, (faces + 1)).findFirst().getAsInt();
 
-        return res;
+        valeur = res;
+    }
+    /**
+     * 
+     * @return value
+     */
+    public int getDe() {
+        return valeur;
     }
 
     private int faces;
@@ -56,19 +65,5 @@ public class De {
      */
     public void setNbFaces(int f) {
         this.faces = f;
-    }
-
-    /**
-     * @return the valeur
-     */
-    public int getValeur() {
-        return valeur;
-    }
-
-    /**
-     * @param v
-     */
-    public void setValeur(int v) {
-        this.valeur = v;
     }
 }
