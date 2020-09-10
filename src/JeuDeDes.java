@@ -28,9 +28,6 @@ public class JeuDeDes {
         str2 = sc.next();
         Joueur j2 = new Joueur(str2);
 
-        j1.afficher();
-        j2.afficher();
-
         De d1 = new De();
 
         jouer(j1, j2, d1);
@@ -69,37 +66,6 @@ public class JeuDeDes {
                 System.out.println(j2.getNom() + " a gagne!!!");
                 break;
             }
-
-            System.out.println("here");
         }
-
-        /*
-        while (j1.getScore() <= 21 || j2.getScore() <= 21) {
-            System.out.println("");
-            System.out.println("Tour " + i);
-            int valeurLancer;
-            d1.lancer();
-            valeurLancer = d1.getDe();
-            System.out.println(j1.getNom() + " a obtenu " + valeurLancer);
-            j1.ajoute(valeurLancer);
-            j1.afficher();
-
-            if (j1.getScore() >= 21) {
-                System.out.println(j1.getNom() + " a gagne!!!");
-                break;
-            }
-            
-            d1.lancer();
-            valeurLancer = d1.getDe();
-            System.out.println(j2.getNom() + " a obtenu " + valeurLancer);
-            j2.ajoute(valeurLancer);
-            j2.afficher();
-
-            if (j2.getScore() >= 21) {
-                System.out.println(j2.getNom() + " a gagne!!!");
-                break;
-            }            
-        }
-         */
     }
 }
