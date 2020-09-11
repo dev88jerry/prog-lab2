@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class JeuDeDes {
 
     /**
-     * Default contstructor for class JeuDeDes
+     * Default constructor for class JeuDeDes
      */
     JeuDeDes() {
         String str, str2;
@@ -47,25 +47,34 @@ public class JeuDeDes {
             int valeurLancer;
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.println(j1.getNom() + " a obtenu " + valeurLancer);
+            System.out.print(j1.getNom() + " a obtenu " + valeurLancer + "\t");
             j1.ajoute(valeurLancer);
             j1.afficher();
 
             if (j1.getScore() >= 21) {
-                System.out.println(j1.getNom() + " a gagne!!!");
+                afficher(j1, i);
                 break;
             }
 
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.println(j2.getNom() + " a obtenu " + valeurLancer);
+            System.out.print(j2.getNom() + " a obtenu " + valeurLancer + "\t");
             j2.ajoute(valeurLancer);
             j2.afficher();
 
             if (j2.getScore() >= 21) {
-                System.out.println(j2.getNom() + " a gagne!!!");
+                afficher(j2, i);
                 break;
             }
         }
+    }
+    
+    /**
+     * 
+     * @param j - Joueur
+     * @param tour
+     */
+    public void afficher(Joueur j, int tour){
+        System.out.println(j.getNom() + " a gagne au tour " + tour +" avec un total de " + j.getScore() + " points");
     }
 }
