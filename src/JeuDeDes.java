@@ -47,34 +47,47 @@ public class JeuDeDes {
             int valeurLancer;
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.print(j1.getNom() + " a obtenu " + valeurLancer + "\t");
+            System.out.println(j1.getNom() + " a obtenu " + valeurLancer);
             j1.ajoute(valeurLancer);
             j1.afficher();
 
-            if (j1.getScore() >= 21) {
-                afficher(j1, i);
-                break;
-            }
-
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.print(j2.getNom() + " a obtenu " + valeurLancer + "\t");
+            System.out.println(j2.getNom() + " a obtenu " + valeurLancer);
             j2.ajoute(valeurLancer);
             j2.afficher();
 
-            if (j2.getScore() >= 21) {
+            if (j1.getScore() >= 21 && j1.getScore() > j2.getScore()) {
+                afficher(j1, i);
+                break;
+            } else if (j2.getScore() >= 21 && j2.getScore() > j1.getScore()) {
                 afficher(j2, i);
                 break;
             }
+
+            if (i == 10) {
+                if (j1.getScore() > j2.getScore()) {
+                    afficher(j1, i);
+                } else {
+                    afficher(j2, i);
+                }
+            }
         }
     }
-    
+
     /**
-     * 
+     *
      * @param j - Joueur
+     *
      * @param tour
+     *
      */
-    public void afficher(Joueur j, int tour){
-        System.out.println(j.getNom() + " a gagne au tour " + tour +" avec un total de " + j.getScore() + " points");
+    public void afficher(Joueur j, int tour) {
+
+        if (tour != 10) {
+            System.out.println(j.getNom() + " a gagne au tour " + tour + " avec un total de " + j.getScore() + " points");
+        } else {
+            System.out.println(j.getNom() + " a gagne avec un total de " + j.getScore() + " points a la fin du jeu");
+        }
     }
 }
