@@ -47,13 +47,15 @@ public class JeuDeDes {
             int valeurLancer;
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.println(j1.getNom() + " a obtenu " + valeurLancer);
+            //System.out.println(j1.getNom() + " a obtenu " + valeurLancer);
+            System.out.printf("%s a obtenu %d%n", j1.getNom(), valeurLancer);
             j1.ajoute(valeurLancer);
             j1.afficher();
 
             d1.lancer();
             valeurLancer = d1.getDe();
-            System.out.println(j2.getNom() + " a obtenu " + valeurLancer);
+            //System.out.println(j2.getNom() + " a obtenu " + valeurLancer);
+            System.out.printf("%s a obtenu %d%n", j2.getNom(), valeurLancer);
             j2.ajoute(valeurLancer);
             j2.afficher();
 
@@ -85,9 +87,11 @@ public class JeuDeDes {
     public void afficher(Joueur j, int tour) {
 
         if (tour != 10) {
-            System.out.println(j.getNom() + " a gagne au tour " + tour + " avec un total de " + j.getScore() + " points");
+            //System.out.println(j.getNom() + " a gagne au tour " + tour + " avec un total de " + j.getScore() + " points");
+            System.out.printf("%s a gagne au tour %d avec un total de %d points%n", j.getNom(), tour, j.getScore());
         } else {
-            System.out.println(j.getNom() + " a gagne avec un total de " + j.getScore() + " points a la fin du jeu");
+            //System.out.println(j.getNom() + " a gagne avec un total de " + j.getScore() + " points a la fin du jeu");
+            System.out.printf("%s a gagne avec un total de %d points a fin du jeu", j.getNom(), j.getScore());
         }
     }
 }
